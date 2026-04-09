@@ -5,11 +5,14 @@
 //<= 100 km $5 <=200 %7,50, >=200 $10
 import java.util.Scanner;
 
+
 import javax.swing.JOptionPane;
 
 public class Transporte {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int menu = 0;
         double edad =0;
          do {
@@ -25,6 +28,23 @@ public class Transporte {
                         JOptionPane.showMessageDialog(null, "El boleto del avion cuesta: " + 100);
                     }
                     break;
+                    case 2:
+                        Double cantKM;
+                         cantKM = Double.parseDouble(JOptionPane.showInputDialog("ingrese la cantidad de kilometros que deseas viajar"));
+
+                        if (cantKM <=100) {
+                           JOptionPane.showMessageDialog(null, "el valor del viaje es $5");
+            
+                         }else if (cantKM <=200) {
+                          JOptionPane.showMessageDialog(null, "el valor del viaje es $7.5");
+            
+                         }else if (cantKM>=200) {
+                           JOptionPane.showMessageDialog(null, "el valor del viaje es $10");
+                         } else {
+                            JOptionPane.showMessageDialog(null, "Opcion no valida, por favor intente de nuevo.");
+                         }
+
+                    break;
                  case 3:
                     JOptionPane.showMessageDialog(null, "Saliendo del programa...");
                     break;
@@ -32,7 +52,16 @@ public class Transporte {
                     break;
             }
 
+        
+            } while (menu != 3);
 
-         }while (menu !=3);
-    }
+       
+
+        
+        }
+
+
+
+       
+    
 }
