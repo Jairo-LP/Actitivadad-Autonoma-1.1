@@ -12,9 +12,6 @@ public class Calculadora {
                 double celsius = sc.nextDouble();
                 double farhenheit = (celsius * 1.8) +32;
                 System.out.println("Los grados Celsius son: " + farhenheit);
-
-
-
             break;
             case 2:
                 System.out.println("Ingrese el precio del producto");
