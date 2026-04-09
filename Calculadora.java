@@ -7,7 +7,15 @@ public class Calculadora {
         System.out.println("===MENU PRINCIPAL=== \n1. Grados Farenheit \n2. IVA \n3. Salir \n ===Selecciona una Opcion===");
         menu = sc.nextInt();
         switch (menu) {
-            
+            case 1:
+            System.out.println("Ingrese los grados celsius");
+                double celsius = sc.nextDouble();
+                double farhenheit = (celsius * 1.8) +32;
+                System.out.println("Los grados Celsius son: " + farhenheit);
+
+
+
+            break;
             case 2:
                 System.out.println("Ingrese el precio del producto");
                 double precio = sc.nextDouble();
