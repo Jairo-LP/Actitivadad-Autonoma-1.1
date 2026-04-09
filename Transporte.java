@@ -13,8 +13,7 @@ public class Transporte {
         int menu = 0;
         double edad =0;
          do {
-            System.out.println("===MENU PRINCIPAL=== \n1. Boleto de Avion \n2. Transporte Terrestre \n3. Salir \n ===Selecciona una Opcion===");
-            menu = sc.nextInt();
+            menu = Integer.parseInt(JOptionPane.showInputDialog("===MENU PRINCIPAL=== \n1. Boleto de Avion \n2. Transporte Terrestre \n3. Salir \n ===Selecciona una Opcion==="));
             switch (menu) {
                 case 1:
                     edad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese su edad"));
