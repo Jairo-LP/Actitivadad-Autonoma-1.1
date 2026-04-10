@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto – MoiCake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #fdf8f5;
+      color: #2c2c2a;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1rem 4rem;
+    }
+ 
+    .mc-wrap {
+      width: 100%;
+      max-width: 520px;
+    }
+ 
+    /* Header */
+    .mc-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+ 
+    .mc-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: #2c2c2a;
+      letter-spacing: -1px;
+    }
+ 
+    .mc-logo span {
+      font-style: italic;
+      color: #D4537E;
+    }
+ 
+    .mc-tagline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888780;
+      margin-top: 6px;
+      font-weight: 300;
+    }
+ 
+    /* Badge */
+    .mc-badge {
+      display: inline-block;
+      background: #FBEAF0;
+      color: #72243E;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+ 
+    /* Section title */
+    .mc-section-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888780;
+      margin: 1.5rem 0 0.75rem;
+      font-weight: 400;
+    }
+ 
+    /* Cards */
+    .mc-card {
+      background: #ffffff;
+      border: 0.5px solid rgba(44, 44, 42, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+ 
+    .mc-card:hover {
+      border-color: rgba(44, 44, 42, 0.3);
+    }
+ 
+    .mc-card-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+ 
+    .mc-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FBEAF0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+ 
+    .mc-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+ 
+    .mc-info {
+      flex: 1;
+      min-width: 0;
+    }
+ 
+    .mc-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888780;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+ 
+    .mc-value {
+      font-size: 15px;
+      color: #2c2c2a;
+      font-weight: 400;
+    }
+ 
+    .mc-value a {
+      color: #993556;
+      text-decoration: none;
+    }
+ 
+    .mc-value a:hover {
+      text-decoration: underline;
+    }
+ 
+    /* Divider */
+    .mc-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1.75rem 0;
+    }
+ 
+    .mc-divider::before,
+    .mc-divider::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: rgba(44, 44, 42, 0.15);
+    }
+ 
+    .mc-divider-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #D4537E;
+      opacity: 0.6;
+    }
+ 
+    /* Map button */
+    .mc-map-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      background: #D4537E;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.2s;
+      margin-top: 12px;
+      text-decoration: none;
+    }
+ 
+    .mc-map-btn:hover {
+      background: #993556;
+    }
+ 
+    .mc-map-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+ 
+    /* Hours */
+    .mc-hours {
+      background: #ffffff;
+      border: 0.5px solid rgba(44, 44, 42, 0.15);
+      border-radius: 12px;
+      padding: 4px 20px;
+    }
+ 
+    .mc-hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+ 
+    .mc-hours-row:not(:last-child) {
+      border-bottom: 0.5px solid rgba(44, 44, 42, 0.1);
+    }
+ 
+    .mc-day {
+      color: #888780;
+      font-weight: 300;
+    }
+ 
+    .mc-time {
+      color: #2c2c2a;
+      font-weight: 400;
+    }
+ 
+    .mc-footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #b4b2a9;
+      margin-top: 2rem;
+      letter-spacing: 0.4px;
+    }
+ 
+    /* Address multiline */
+    .mc-address {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #2c2c2a;
+    }
+ 
+    .mc-address span {
+      color: #888780;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+        <nav>
+        <ul> <a href="index.html">Home</a></ul>
+        <ul> <a href="Contactos.html">Contactos </a> </ul>
+        <ul> Acerca</ul>
+
+        </ul>
+    </nav>
+ 
+  <div class="mc-wrap">
+ 
+    <!-- Header -->
+    <div class="mc-header">
+      <h1 class="mc-logo">Moi<span>Cake</span></h1>
+      <p class="mc-tagline">Pastelería artesanal · Quito</p>
+    </div>
+ 
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <span class="mc-badge">Contáctanos</span>
+    </div>
+ 
+    <!-- Sección comunicación -->
+    <p class="mc-section-title">Comunicación</p>
+ 
+    <!-- Teléfono -->
+    <div class="mc-card">
+      <div class="mc-card-inner">
+        <div class="mc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.21 2 2 0 012 .03h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/>
+          </svg>
+        </div>
+        <div class="mc-info">
+          <p class="mc-label">Teléfono</p>
+          <p class="mc-value"><a href="tel:+593987654321">+593 98 765 4321</a></p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Correo -->
+    <div class="mc-card">
+      <div class="mc-card-inner">
+        <div class="mc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="mc-info">
+          <p class="mc-label">Correo</p>
+          <p class="mc-value"><a href="mailto:hola@moicake.ec">hola@moicake.ec</a></p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Instagram -->
+    <div class="mc-card">
+      <div class="mc-card-inner">
+        <div class="mc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        <div class="mc-info">
+          <p class="mc-label">Instagram</p>
+          <p class="mc-value"><a href="https://instagram.com/moicake.ec" target="_blank">@moicake.ec</a></p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- WhatsApp -->
+    <div class="mc-card">
+      <div class="mc-card-inner">
+        <div class="mc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+          </svg>
+        </div>
+        <div class="mc-info">
+          <p class="mc-label">WhatsApp</p>
+          <p class="mc-value"><a href="https://wa.me/593987654321" target="_blank">Escríbenos por WhatsApp</a></p>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="mc-divider"><div class="mc-divider-dot"></div></div>
+ 
+    <!-- Sección ubicación -->
+    <p class="mc-section-title">Ubicación</p>
+ 
+    <div class="mc-card">
+      <div class="mc-card-inner">
+        <div class="mc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D4537E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="mc-info">
+          <p class="mc-label">Dirección</p>
+          <p class="mc-address">
+            Av. República del Salvador N34-183<br>
+            <span>La Floresta, Quito</span>
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+    <a class="mc-map-btn" href="https://maps.google.com/?q=Av.+República+del+Salvador+N34-183+Quito" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+      </svg>
+      Cómo llegar
+    </a>
+ 
+    <div class="mc-divider"><div class="mc-divider-dot"></div></div>
+ 
+    <!-- Horarios -->
+    <p class="mc-section-title">Horario de atención</p>
+ 
+    <div class="mc-hours">
+      <div class="mc-hours-row">
+        <span class="mc-day">Lunes – Viernes</span>
+        <span class="mc-time">9:00 – 19:00</span>
+      </div>
+      <div class="mc-hours-row">
+        <span class="mc-day">Sábado</span>
+        <span class="mc-time">9:00 – 20:00</span>
+      </div>
+      <div class="mc-hours-row">
+        <span class="mc-day">Domingo</span>
+        <span class="mc-time">10:00 – 15:00</span>
+      </div>
+    </div>
+ 
+    <p class="mc-footer-note">Pedidos personalizados con 48h de anticipación</p>
+ 
+  </div>
+ 
+</body>
+</html>
